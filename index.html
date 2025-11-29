@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Skill Stacking Guide</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#">
+          <svg class="logo" width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="4" fill="#60A5FA" />
+            <path d="M7 13c2-3 5-6 10-6" stroke="#072024" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-title">SkillStack</span>
+        </a>
+        <nav class="nav">
+          <a href="#">Home</a>
+          <a href="#results">Guide</a>
+          <a href="#">Resources</a>
+          <a href="#">About</a>
+        </nav>
+        <div class="header-cta">
+          <button id="suggest-cta" class="btn-cta">Suggest</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <h1>Build a smarter career path by stacking the right skills</h1>
+            <p class="lead">Enter your current skills and career goals — we suggest complementary skills, reasons, and learning resources to level up efficiently.</p>
+            <div class="hero-actions">
+              <button id="hero-suggest" class="btn-primary">Get suggestions</button>
+              <a class="btn-link" href="#">Learn more</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="card-visual">Your personalized roadmap</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content" aria-labelledby="guide-heading">
+        <h2 id="guide-heading" class="sr-only">Skill Stacking Guide</h2>
+        <div class="grid">
+          <aside class="card card-form">
+            <h3 class="card-title">Tell us about you</h3>
+            <form id="skill-form">
+              <label for="skills">Current skills</label>
+              <input id="skills" name="skills" placeholder="e.g., JavaScript, React, SQL" />
+
+              <label for="goal">Career goal</label>
+              <select id="goal" name="goal">
+                <option value="frontend">Frontend Developer</option>
+                <option value="backend">Backend Developer</option>
+                <option value="fullstack">Full-Stack Developer</option>
+                <option value="data">Data Scientist / Analyst</option>
+                <option value="pm">Product Manager</option>
+                <option value="devops">DevOps / SRE</option>
+                <option value="custom">Custom...</option>
+              </select>
+              <input id="goal-custom" placeholder="Type a custom goal" style="display:none; margin-top:8px;" />
+
+              <label for="proficiency">Average proficiency</label>
+              <div class="range-row">
+                <input id="proficiency" type="range" min="1" max="5" value="3" />
+                <div class="range-value" id="prof-value">3</div>
+              </div>
+
+              <label for="style">Preferred learning style</label>
+              <select id="style">
+                <option value="projects">Project-based</option>
+                <option value="courses">Structured courses</option>
+                <option value="reading">Books / Articles</option>
+                <option value="mixed">Mixed</option>
+              </select>
+
+              <div class="form-actions">
+                <button type="submit" id="suggest-btn" class="btn-primary">Suggest Skills</button>
+                <button type="button" id="preset-btn" class="btn-ghost">Load Presets</button>
+                <button type="button" id="clear-btn" class="btn-muted">Clear</button>
+              </div>
+            </form>
+          </aside>
+
+          <section id="results" class="card card-results">
+            <div class="results-head">
+              <h3 class="card-title">Suggestions</h3>
+              <div class="results-actions">
+                <button id="copy-btn" class="btn-ghost">Copy JSON</button>
+                <button id="export-btn" class="btn-ghost">Export CSV</button>
+              </div>
+            </div>
+            <div class="results-list">
+              <p class="hint">Fill the form and click "Suggest Skills" to get personalized recommendations.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <strong>SkillStack</strong>
+          <p class="muted">A lightweight guide to help you choose complementary skills and resources.</p>
+        </div>
+        <div class="footer-col">
+          <strong>Resources</strong>
+          <ul>
+            <li><a href="#">Learning paths</a></li>
+            <li><a href="#">Presets</a></li>
+            <li><a href="#">Contribute</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <strong>Company</strong>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col social">
+          <strong>Follow</strong>
+          <div class="social-icons">
+            <a href="#" aria-label="Twitter"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7.5c-.6.3-1.2.5-1.9.6.7-.4 1.2-1 1.4-1.7-.6.4-1.4.7-2.2.9C16.8 6 16 5.5 15 5.5c-1.6 0-2.9 1.3-2.9 2.9 0 .2 0 .4.1.6-2.4-.1-4.6-1.3-6-3.1-.3.6-.5 1.3-.5 2 0 1.4.7 2.7 1.8 3.4-.6 0-1.2-.2-1.7-.5v.1c0 2 1.4 3.6 3.3 3.9-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.2 3.1 2.2-1.1.9-2.5 1.4-4 1.4H6c1.4.9 3 1.4 4.7 1.4 5.6 0 8.7-4.7 8.7-8.7v-.4c.6-.4 1.1-1 1.5-1.6-.6.4-1.3.6-2 .7z" fill="#9FB4CC"/></svg></a>
+            <a href="#" aria-label="GitHub"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.5.5.5 5.6.5 12.1c0 5.1 3.3 9.5 7.9 11 0.6.1.8-.2.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.4 3.6 1.1.1-.9.4-1.4.7-1.7-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.4 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.4-1.5 3.4-1.2 3.4-1.2.6 1.7.2 3 .1 3.3.7.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.9 7.9-11 0-6.5-5-11.6-11.5-11.6z" fill="#9FB4CC"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 SkillStack • Built for learning</div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
